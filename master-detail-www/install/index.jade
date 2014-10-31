@@ -1,0 +1,24 @@
+//- This is unbuffered comment (will not show up in generated HTML) [http://jade-lang.com/reference/comments]
+h1= title
+
+p Master Interface
+
+//- master variable [see index.js, line 45, 49]
+ul
+each el in master
+	li
+		a(href= '/index?supplier='+el.SupplierID) #{el.CompanyName}
+		//- GET Param.  ^----------------------^
+		//- Iteration [http://jade-lang.com/reference/iteration]
+		//- Attributes "a(href...)" [http://jade-lang.com/reference/attributes]
+		//- Inline JS "#{el.CompanyName}" [http://jade-lang.com/reference/code, see Interpolation]
+
+//- detail variable [see index.js, line 45, 49]
+if detail != null
+	p Detail Interface
+	ul
+	each el in detail
+		li= el.ProductName
+		//- Conditionals [http://jade-lang.com/reference/conditionals]
+		//- Iteration [http://jade-lang.com/reference/iteration]
+		//- Inline JS "#{el.CompanyName}" [http://jade-lang.com/reference/code, see Buffered Code]

@@ -1,0 +1,21 @@
+//- This is unbuffered comment (will not show up in generated HTML) [http://jade-lang.com/reference/comments]
+#container.wrapper
+	h1= title
+	//- Creates <div id="container" class="prodlist"></div>
+	//- This div is used at visualization [see public/stylesheets/style.css]
+	#container.prodlist
+		p Select a Product
+		ul
+		each el in products
+			li
+				a(href= '/index?addproduct='+el.ProductID) #{el.ProductName}
+		//- Iteration [http://jade-lang.com/reference/iteration]
+		//- Attributes "a(href...)" [http://jade-lang.com/reference/attributes]
+		//- Inline JS "#{el.CompanyName}" [http://jade-lang.com/reference/code, see Interpolation]
+
+	#container.spacer
+	#container.cart
+		p e-Cart Content [Product Name (#Count)]
+		ul
+		each val, key in cart
+			li #{val.desc.ProductName} (#{val.count})

@@ -1,0 +1,11 @@
+Deploy: ./setup.sh
+Run: nodejs e1-index.js
+     nodejs e2-index.js
+     nodejs e3-index.js
+     nodejs e4-index.js
+     nodejs e5-index.js
+     nodejs e6-index.js
+     nodejs hw3.1-index.js
+     nodejs hw3.2-index.js
+
+Homework: see hw3.1-index.js, hw3.2-index.js (DN3.1, DN3.2).

@@ -1,0 +1,3 @@
+Deploy: ./setup.sh
+Run: node app.js
+Homework: see install/chkout.js, install/printOrder.js (DN3.5, DN3.6).

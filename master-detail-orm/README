@@ -1,0 +1,2 @@
+Deploy: ./setup.sh
+Run: node index.js

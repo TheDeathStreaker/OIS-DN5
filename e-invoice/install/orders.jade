@@ -1,0 +1,9 @@
+#container.wrapper
+	h1= title
+	#container.prodlist
+		p Select an Order
+
+		ul
+		each el in orders
+			li
+				a(href= '/printOrder?order='+el.OrderID) #{el.OrderID}
