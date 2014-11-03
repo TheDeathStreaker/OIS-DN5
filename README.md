@@ -19,7 +19,7 @@
 		* Iz glavne veje naredite novo vejo `git checkout -b dn_3_3`
 		* Uredite routes/index.js
 		* Preizkusite `nodejs app.js` z brskalnikom.
-	* DN 3.5
+	* DN 3.4
 		* Iz stranske veje dn_3_3 naredite novo vejo `git checkout -b dn_3_4`
 		* Uredite routes/index.js
 		* Preizkusite `nodejs app.js` z brskalnikom.
