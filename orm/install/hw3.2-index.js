@@ -1,6 +1,6 @@
 /* 
  * DN3.2: Uporabite ORM. Za ProductID = 3 izpišite njegovo ime (ProductName), 
- *        pripadajoč naziv podjetja (CompanyName), kategorijo produkta (CategoryName),
+ *        pripadajoč naziv podjetja dobavitelja (CompanyName), kategorijo produkta (CategoryName),
  *        datume naročil (OrderDate) in število produktov v posameznem naročilu (Quantity).
  *        Uporabite lahko največ eno poizvedbo.
  *

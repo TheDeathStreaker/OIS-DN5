@@ -1,5 +1,5 @@
 /* 
- * DN3.1: Razširite nalogo e5-index.js, tako da se bo za dan OrderID izpisalo tudi ime podjetja pod naročilom.
+ * DN3.1: Razširite nalogo e6-index.js, tako da se bo za dan OrderID izpisalo tudi ime podjetja pod naročilom (tj. ime podjetja stranke).
  *
  * Primer izpisa.
  * ---
