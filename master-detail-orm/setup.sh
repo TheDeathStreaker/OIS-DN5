@@ -47,4 +47,6 @@ for file in $(ls models); do
 done
 
 # 4.1 Deploy Files
-cp install/index.js ./
+if [ ! -f index.js ]; then
+        cp install/index.js .
+fi
