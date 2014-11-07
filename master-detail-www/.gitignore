@@ -2,3 +2,12 @@
 models/
 # Modules install via npm
 node_modules/
+# Express directories, except the project files
+public/
+routes/
+views/
+!routes/index.js
+!views/index.jade
+# Express app and package info
+app.js
+package.json
