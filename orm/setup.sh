@@ -47,4 +47,34 @@ for file in $(ls models); do
 done
 
 # 4.1 Deploy Files
-cp install/*index.js ./
+if [ ! -f e1-index.js ]; then
+	cp install/e1-index.js .
+fi
+
+if [ ! -f e2-index.js ]; then
+        cp install/e2-index.js .
+fi
+
+if [ ! -f e3-index.js ]; then
+        cp install/e3-index.js .
+fi
+
+if [ ! -f e4-index.js ]; then
+        cp install/e4-index.js .
+fi
+
+if [ ! -f e5-index.js ]; then
+        cp install/e5-index.js .
+fi
+
+if [ ! -f e6-index.js ]; then
+        cp install/e6-index.js .
+fi
+
+if [ ! -f hw3.1-index.js ]; then
+        cp install/hw3.1-index.js .
+fi
+
+if [ ! -f hw3.2-index.js ]; then
+        cp install/hw3.1-index.js .
+fi
