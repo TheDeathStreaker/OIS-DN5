@@ -47,10 +47,51 @@ for file in $(ls models); do
 done
 
 # 4. Install express
+# 4.1 Save existing files
+mkdir tmp
+if [ -f app.js ]; then
+        cp app.js tmp/app.js
+fi
+
+if [ -f routes/index.js ]; then
+        cp routes/index.js tmp/index.js
+fi
+
+if [ -f views/index.jade ]; then
+        cp views/index.jade tmp/index.jade
+fi
+
+if [ -f views/layout.jade ]; then
+        cp views/layout.jade tmp/layout.jade
+fi
+# 4.2 Deploy express
 yes | express --sessions --css stylus
+# 4.3 Install deps
 npm install
-# 4.1 Deploy Files
-cp install/app.js ./app.js
-cp install/index.js routes/index.js
-cp install/index.jade views/index.jade
-cp install/layout.jade views/layout.jade
+# 4.4 Deploy/Restore Files
+if [ -f tmp/app.js ]; then
+	mv tmp/app.js ./app.js
+else
+	cp install/app.js ./app.js
+fi
+
+if [ -f tmp/index.js ]; then
+	mv tmp/index.js routes/index.js
+else
+	cp install/index.js routes/index.js
+fi
+
+if [ -f tmp/index.jade ]; then
+	mv tmp/index.jade views/index.jade
+else
+	cp install/index.jade views/index.jade
+fi
+
+if [ -f tmp/layout.jade ]; then
+	mv tmp/layout.jade views/layout.jade
+else
+	cp install/layout.jade views/layout.jade
+fi
+
+rmdir tmp
+
