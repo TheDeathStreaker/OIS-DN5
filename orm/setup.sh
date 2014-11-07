@@ -76,5 +76,5 @@ if [ ! -f hw3.1-index.js ]; then
 fi
 
 if [ ! -f hw3.2-index.js ]; then
-        cp install/hw3.1-index.js .
+        cp install/hw3.2-index.js .
 fi
