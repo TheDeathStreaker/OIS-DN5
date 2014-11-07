@@ -47,20 +47,119 @@ for file in $(ls models); do
 done
 
 # 4. Install express
+mkdir tmp
+if [ -f app.js ]; then
+        cp app.js tmp/app.js
+fi
+
+if [ -f routes/index.js ]; then
+        cp routes/index.js tmp/index.js
+fi
+
+if [ -f views/index.jade ]; then
+        cp views/index.jade tmp/index.jade
+fi
+
+if [ -f views/layout.jade ]; then
+        cp views/layout.jade tmp/layout.jade
+fi
+
+if [ -f public/stylesheets/containers.css ]; then
+        cp public/stylesheets/containers.css tmp/containers.css
+fi
+
+if [ -f routes/chkout.js ]; then
+	cp routes/chkout.js tmp/chkout.js
+fi
+
+if [ -f routes/orders.js ]; then
+        cp routes/orders.js tmp/orders.js
+fi
+
+if [ -f routes/printOrder.js ]; then
+        cp routes/printOrder.js tmp/printOrder.js
+fi
+
+if [ -f views/chkout.xml ]; then
+        cp views/chkout.xml tmp/chkout.xml
+fi
+
+if [ -f views/orders.jade ]; then
+        cp views/orders.jade tmp/orders.jade
+fi
+
+if [ -f public/stylesheets/chkout.xslt ]; then
+        cp public/stylesheets/chkout.xslt tmp/chkout.xslt
+fi
+# 4.2 Deploy express
 yes | express --sessions --css stylus
+# 4.3 Install deps
 sudo npm install
-# 4.1 Deploy Files
-cp install/app.js app.js
+# 4.4 Deploy/Restore Files
+if [ -f tmp/app.js ]; then
+        mv tmp/app.js ./app.js
+else
+        cp install/app.js ./app.js
+fi
 
-cp install/index.js routes/index.js
-cp install/chkout.js routes/chkout.js
-cp install/orders.js routes/orders.js
-cp install/printOrder.js routes/printOrder.js
+if [ -f tmp/index.js ]; then
+        mv tmp/index.js routes/index.js
+else
+        cp install/index.js routes/index.js
+fi
 
-cp install/index.jade views/index.jade
-cp install/layout.jade views/layout.jade
-cp install/chkout.xml views/chkout.xml
-cp install/orders.jade views/orders.jade
+if [ -f tmp/index.jade ]; then
+        mv tmp/index.jade views/index.jade
+else
+        cp install/index.jade views/index.jade
+fi
 
-cp install/chkout.xslt public/stylesheets/chkout.xslt
-cp install/containers.css public/stylesheets/containers.css
+if [ -f tmp/layout.jade ]; then
+        mv tmp/layout.jade views/layout.jade
+else
+        cp install/layout.jade views/layout.jade
+fi
+
+if [ -f tmp/containers.css ]; then
+        mv tmp/containers.css public/stylesheets/containers.css
+else
+        cp install/containers.css public/stylesheets/containers.css
+fi
+
+if [ -f tmp/chkout.js ]; then
+	mv tmp/chkout.js routes/chkout.js
+else
+	cp install/chkout.js routes/chkout.js 
+fi
+
+if [ -f tmp/orders.js ]; then
+        mv tmp/orders.js routes/orders.js
+else      
+	cp install/orders.js routes/orders.js
+fi
+
+if [ -f tmp/printOrder.js ]; then
+        mv tmp/printOrder.js routes/printOrder.js
+else      
+	cp install/printOrder.js routes/printOrder.js
+fi
+
+if [ -f tmp/chkout.xml ]; then
+        mv tmp/chkout.xml views/chkout.xml
+else      
+	cp install/chkout.xml views/chkout.xml
+fi
+
+if [ -f tmp/orders.jade ]; then
+        mv tmp/orders.jade views/orders.jade
+else
+	cp install/orders.jade views/orders.jade
+fi
+
+if [ -f tmp/chkout.xslt ]; then
+        mv tmp/chkout.xslt public/stylesheets/chkout.xslt
+else
+	cp install/chkout.xslt public/stylesheets/chkout.xslt
+fi
+
+rmdir tmp

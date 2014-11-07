@@ -2,3 +2,20 @@
 models/
 # Modules install via npm
 node_modules/
+# Express directories, except the project files
+public/*/*
+routes/*
+views/*
+!public/stylesheets/containers.css
+!public/stylesheets/chkout.xslt
+!routes/index.js
+!routes/chkout.js
+!routes/orders.js
+!routes/printOrder.js
+!views/index.jade
+!views/orders.jade
+!views/layout.jade
+!views/chkout.xml
+# Package info, but not app.js
+!app.js
+package.json
