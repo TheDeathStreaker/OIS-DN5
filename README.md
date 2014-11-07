@@ -1,7 +1,8 @@
 Sinhronizacija z vodilnim repozitorjem.
+
 * Dodajte vodilni repozitorij in pridobite spremembe.
-	* `git remote add upstream https://istarc2@bitbucket.org/istarc2/ois-dn3.git`
-	* `git fetch upstream`
+	*  `git remote add upstream https://istarc2@bitbucket.org/istarc2/ois-dn3.git`
+	*  `git fetch upstream`
 
 * Uveljavite spremembe na glavni veji.
 	*  `git checkout master`
@@ -14,6 +15,7 @@ Sinhronizacija z vodilnim repozitorjem.
 	* `git push origin dn_3_1`
 
 Postavitev okolja za reševanje domačih nalog.
+
 * DN 3.1 in 3.2
 	* Priprava okolja:
 		* `cd orm`
