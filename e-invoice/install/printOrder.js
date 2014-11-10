@@ -3,7 +3,7 @@
  *          podane identifikacijske številke naročila.
  *
  *          Elektronsko račun naj pravilno prikaže postavke računa, vključno z atributi: 
- *          Opis, Obdobje Dobave, Količina, Cena, Vrednost, Znesek popusta, 
+ *          Opis, Obdobje Dobave, Količina, Cena (iz modela Products in ne OrderDetails), Vrednost, Znesek popusta, 
  *          DDV (pomeni znesek DDV), Osnova za DDV in Skupaj. Davčna stopnja (%) naj bo vedno enaka 22 %.
  *
  *          Vrednost popusta (%) tokrat pridobite iz podatkovne baze.
@@ -13,8 +13,8 @@
  *
  *       b) Prav tako pravilno prikažite agregirane vrednosti: Vrednost postavk, Vsota popustov,
  *          Osnova za DDV, Vsota zneskov DDV, Vsota s popusti in davki in Za plačilo. Pri tem 
- *          nastavite SUPER RABAT na 0 %, tako da ne vpliva na končno plačilo. Enako velja za
- *          vrednosti Neobdavčeno, Zamudne obresti in Izravnava.
+ *          nastavite SUPER RABAT na 0 %, tako da ne vpliva na končno plačilo.
+ *          Kategorije Neobdavčeno, Zamudne obresti, Izravnava in Predplačilo naj imajo vrednost 0.
  *
  *       c) Prav tako pravilno prikažite povzetek davkov.
  *          (i)   Popravite splošno davčno stopnjo iz 20 % na 22 % in vrednosti Osnova za DDV, Vrednost DDV.
