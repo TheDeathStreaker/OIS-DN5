@@ -3,7 +3,8 @@
  *          podane identifikacijske številke naročila.
  *
  *          Elektronsko račun naj pravilno prikaže postavke računa, vključno z atributi: 
- *          Opis, Obdobje Dobave, Količina, Cena (iz modela Products in ne OrderDetails), Vrednost, Znesek popusta, 
+ *          Opis, Obdobje Dobave (uporabite OrderDate in ShippedDate iz modela Orders),
+ *          Količina, Cena (iz modela Products in ne OrderDetails), Vrednost, Znesek popusta, 
  *          DDV (pomeni znesek DDV), Osnova za DDV in Skupaj. Davčna stopnja (%) naj bo vedno enaka 22 %.
  *
  *          Vrednost popusta (%) tokrat pridobite iz podatkovne baze.
