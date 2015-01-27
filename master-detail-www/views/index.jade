@@ -1,0 +1,29 @@
+h1= title1
+ul
+each el in master
+	li
+		a(href= '/index?category='+el.CategoryID) #{el.CategoryName}
+		
+if detail != null
+	h2= title2
+	form(id='poslji-obrazec')
+		input(id='dodaj' type='submit' value='Dodaj')
+	table
+		thead
+			tr
+				td
+				td
+					b Ime
+				td
+					b 	Cena
+				td
+					b 	Zaloga
+		tbody
+			p
+				each el in detail
+					tr
+						td
+							input(type="radio", id=el.ProductID, name="products")
+						td #{el.ProductName}
+						td 	#{el.UnitPrice} €
+						td 	#{el.UnitsInStock}
