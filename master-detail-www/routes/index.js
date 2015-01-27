@@ -35,23 +35,18 @@ exports.index = function(req, res){
 			 		// 5. Generate HTML page by invoking the Jade interpreter and providing the appropriate Jade template [see views/index.jade]
 			 		//    with two arguments: master and detail (lists)
 			 		var title = 'Seznam izdelkov kategorije "' + qrd.CategoryName + '"';
-			 		res.render('index', { title1: 'Kategorije izdelkov', title2: title, master: qrm, detail: qrd.Products });
+			 		res.render('index', { title1: 'Kategorije izdelkov', title2: title, master: qrm, detail: qrd.Products, add: false, bold: selectedItem });
 			 		// 6. [see views/index.jade]
+
 			 	})
 			 	.error(function(err){
 			 		res.render('index', { title1: 'Kategorije izdelkov', master: qrm, detail: null });
 			 		render404(req, res);
-			 });
+			});
 		})
 		.error(function(err){
 			render404(req, res);
 	});
-	
-	$('#poslji-obrazec').submit(function() {
-	    console.log("Dela");
-	});
-	
-	
 };
 
 render404 = function(req, res) {
