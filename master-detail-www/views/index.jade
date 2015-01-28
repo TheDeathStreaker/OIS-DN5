@@ -3,17 +3,18 @@ each el in master
 	p
 		if bold == el.CategoryID
 				input(onchange="izbran()", type="radio", value=el.CategoryID, name="categories")
-				b #{el.CategoryName} (#{el.Description})
+				b
+					a(href= '/index?category='+el.CategoryID) #{el.CategoryName} (#{el.Description})
 		else
 			input(onchange="izbran()", type="radio", value=el.CategoryID, name="categories")
-			s #{el.CategoryName} (#{el.Description})
+			a(href= '/index?category='+el.CategoryID) #{el.CategoryName} (#{el.Description})
 		
 if detail != null
 	h2= title2
 	form(id='poslji-obrazec')
-		input(id='dodaj' type='button' value='Dodaj' onclick='dodaj()')
-		input(id='posodobi' type='button' value='Posodobi' onclick='posodobi()')
-		input(id='zbrisi' type='button' value='Zbriši' onclick='zbrisi()')
+		input(onclick="dodaj()" id="dod" type="button" value="Dodaj")
+		input(id='pos' type='button' value='Posodobi' onclick="posodobi()")
+		input(id='zbr' type='button' value='Zbriši' onclick="zbrisi()")
 	table
 		thead
 			tr
@@ -27,7 +28,7 @@ if detail != null
 				each el in detail
 					tr
 						td
-							input(type="radio", id=el.ProductID, name="products")
+							input(type="radio", value=el.ProductID, name="products")
 						td #{el.ProductName}
 						td #{el.UnitPrice} €
 						td #{el.UnitsInStock}
@@ -37,10 +38,10 @@ if detail != null
 					tr
 						td
 						td
-							input(id='ime')
+							input(id='name')
 						td
-							input(id='cena')
+							input(id='price')
 						td
-							input(id='kolicina')
+							input(id='quantity')
 						td
-							input(id='shrani' type='button' value='Shrani' onclick='shrani()')
+							input(id='shr' type='button' value='Shrani' onclick='shrani()')

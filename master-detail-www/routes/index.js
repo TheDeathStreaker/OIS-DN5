@@ -15,19 +15,7 @@ exports.index = function(req, res){
 			if(qrm == null)
 				throw "Err";
 			//console.log(qrm);
-			
-			function izbran(){
-    			var radios = document.getElementsByName("categories");
-    			var length = radios.length;
-    
-			    for (var i=0; i<length; i++){
-			        if(radios[i].checked){
-        			    alert(radios[i].value);
-				        break;
-        			}
-    			}
-			}
-			
+
 			 Project.Categories
 			 	.find({ where: { CategoryID: selectedItem }, include: [Project.Products,] })
 			 	.success(function(qrd) {
