@@ -20,6 +20,7 @@ function izbran(){
 
 function dodaj(){
     alert("add");
+    var add = true;
 }
 
 function zbrisi(){
@@ -37,9 +38,13 @@ function zbrisi(){
     }
     if(izbran){
         alert(izbranID);
+        Project.find(1).success(function(project) {
+            project.destroy();
+        });
         // Project.Products
         //     .find({ where: { ProductID: izbranID }})
         //     .success(function(item) {
+        //          item.destroy(); //izbriše vnos
         //         alert(item.ProductName);
         //     })
         //     .error();
@@ -50,6 +55,30 @@ function zbrisi(){
  
 function posodobi(){
     alert("posodobi");
+    var radios = document.getElementsByName("products");
+    var length = radios.length;
+    var izbran = false;
+    var izbranID;
+    
+    for(var i=0; i<length; i++){
+        if(radios[i].checked){
+            izbran = true;
+            izbranID = radios[i].value; 
+            break;
+        }
+    }
+    if(izbran){
+        alert(izbranID);
+        var podatki = document.getElementById(izbranID);
+        // Project.Products
+        //     .find({ where: { ProductID: izbranID }})
+        //     .success(function(item) {
+        //         alert(item.ProductName);
+        //     })
+        //     .error();
+    } else {
+        alert("Ni izbranega izdelka!")
+    }
 }
 
 function shrani(){
@@ -59,9 +88,5 @@ function shrani(){
     alert("shrani");
     
    // Project.Products
-//        .findOrCreate({where: {ProductName: ime}, defaults: {UnitPrice: cena, UnitsInStock: kolicina}})
-//        .spread(function(user, created) {
-//            console.log(user.values)
-//            console.log(created)
-//        });
+//        .findOrCreate({where: {ProductName: ime}, defaults: {UnitPrice: cena, UnitsInStock: kolicina}});
 }
