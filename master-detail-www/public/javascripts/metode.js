@@ -57,4 +57,11 @@ function shrani(){
     var cena = document.getElementById("price").value;
     var kolicina = document.getElementById("quantity").value;
     alert("shrani");
+    
+   // Project.Products
+//        .findOrCreate({where: {ProductName: ime}, defaults: {UnitPrice: cena, UnitsInStock: kolicina}})
+//        .spread(function(user, created) {
+//            console.log(user.values)
+//            console.log(created)
+//        });
 }

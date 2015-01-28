@@ -26,12 +26,12 @@ if detail != null
 		tbody
 			p
 				each el in detail
-					tr
+					tr(id=el.ProductID)
 						td
 							input(type="radio", value=el.ProductID, name="products")
-						td #{el.ProductName}
-						td #{el.UnitPrice} €
-						td #{el.UnitsInStock}
+						td(id='ime') #{el.ProductName}
+						td(id='cena') #{el.UnitPrice} €
+						td(id='kol') #{el.UnitsInStock}
 						td
 						
 				if add
