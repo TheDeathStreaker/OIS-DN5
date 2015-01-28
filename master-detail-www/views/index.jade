@@ -1,12 +1,12 @@
 h1= title1
-ul
 each el in master
-	li
+	p
 		if bold == el.CategoryID
-			b
-				a(href= '/index?category='+el.CategoryID) #{el.CategoryName}
+				input(onchange="izbran()", type="radio", value=el.CategoryID, name="categories")
+				b #{el.CategoryName} (#{el.Description})
 		else
-			a(href= '/index?category='+el.CategoryID) #{el.CategoryName}
+			input(onchange="izbran()", type="radio", value=el.CategoryID, name="categories")
+			s #{el.CategoryName} (#{el.Description})
 		
 if detail != null
 	h2= title2
@@ -34,7 +34,7 @@ if detail != null
 						td
 						
 				if add
-					tr		
+					tr
 						td
 						td
 							input(id='ime')
